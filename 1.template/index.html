@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+
+
+<body ng-app="tc">
+  <div clas="container">
+    <h1>Recent Posts</h1>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <strong> @dickeyxxx</strong>
+        <span>Node rules!</span>
+      </li>
+      <li class="list-group-item">
+        <strong>@jeffdickey</strong>
+        <span>Trying out angular.js.....</span>
+      </li>
+    </ul>
+    <div ng-controller='PostCtrl'>
+      {{ posts }}
+    </div>
+  </div>
+  <script type="text/javascript" src="https://code.angularjs.org/1.4.6/angular.min.js"></script>
+  <script>
+    var tc = angular.module('tc', [])
+    tc.controller('PostCtrl', function($scope) {
+
+      $scope.posts = [{
+        username: 'dickeyxxx',
+        body: 'Node rules!'
+      }, {
+        username: 'jeffdickey',
+        body: 'trying out angular.js'
+      }]
+    })
+  </script>
+</body>
+</script>
+
+</html>
