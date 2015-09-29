@@ -4,4 +4,4 @@ MEAN.io stack Twitter clone.
 
 This project is experimental only.
 
-Not to be used in a production enviroment. 
+Not to be used in a production.
