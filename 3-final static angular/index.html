@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+
+
+<body ng-app="tc">
+  <div ng-controller='PostCtrl' clas="container">
+    <h1>Recent Posts</h1>
+    <input ng-model='postBody' class='form-control' />
+    <button ng-click='addPost()' class='btn btn-default'>Add Post</button>
+    <ul class="list-group">
+      <li ng-repeat='post in posts' class="list-group-item">
+        <strong>@ {{ post.username }}</strong>
+        <span>{{ post.body }}</span>
+      </li>
+    </ul>
+  </div>
+  <script type="text/javascript" src="https://code.angularjs.org/1.4.6/angular.min.js"></script>
+  <script>
+    var tc = angular.module('tc', [])
+    tc.controller('PostCtrl', function($scope) {
+
+      $scope.addPost = function() {
+        if ($scope.postBody) {
+          $scope.posts.unshift({
+            username: 'dickeyxxx',
+            body: $scope.postBody
+          })
+          $scope.postBody = null
+        }
+      }
+
+      $scope.posts = [{
+        username: 'dickeyxxx',
+        body: 'Node rules!'
+      }, {
+        username: 'jeffdickey',
+        body: 'trying out angular.js'
+      }]
+
+
+    })
+  </script>
+</body>
+</script>
+
+</html>
